@@ -1,0 +1,11 @@
+{
+    "firstname" : "JamesPut",
+    "lastname" : "BrownPut",
+    "totalprice" : 500,
+    "depositpaid" : false,
+    "bookingdates" : {
+        "checkin" : "2026-10-01",
+        "checkout" : "2026-10-12"
+    },
+    "additionalneeds" : "Dinner Dosa"
+}
