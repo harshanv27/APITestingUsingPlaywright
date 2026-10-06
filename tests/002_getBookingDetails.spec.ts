@@ -19,10 +19,8 @@ console.log(response.status());
 console.log(response.statusText());
 
 // validation status 
-
 expect(response.status()).toBe(200);
 expect(response.statusText()).toBe("OK");
-
 
 // Validation property 
 expect(responseBody).toHaveProperty("firstname");
@@ -32,6 +30,5 @@ expect(responseBody).toHaveProperty("totalprice");
 const firstName= responseBody.firstname;
 console.log(firstName);
 console.log(responseBody.totalprice);
-
 
 })

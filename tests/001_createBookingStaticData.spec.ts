@@ -36,7 +36,7 @@ test("Create Booking with static data", async({request})=>{
  expect(response.status()).toBe(200);
 
 console.log(response.statusText()); // status message will print Ok, Created etc
-expect(response.statusText()).toBe("OK");
+expect(response.statusText()).toBe("OK"); 
 
 // Validating the response body 
 

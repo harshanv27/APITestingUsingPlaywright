@@ -10,7 +10,6 @@ test("Get Booking details by query parameter", async({request})=>{
     const firstname="Jim";
     const lastname="Brown";
 
-
     const response= await request.get(`${Base_URL}/booking`,
         {
         params:{
@@ -49,10 +48,13 @@ expect(response.statusText()).toBe("OK");
 // Validation Point 
 // Verify booking id is a number and greater than zero 
 
- for(const item of responseBody){   // { bookingid: 151 }
+for(const item of responseBody){
 
-    expect(item).toHaveProperty("bookingid");
-    expect(typeof(item.bookingid)).toBe("number");
-    expect(item.bookingid).toBeGreaterThan(0);
- }
+expect(item).toHaveProperty("bookingid");
+expect(typeof(item.bookingid)).toBe("number");
+expect(item.bookingid).toBeGreaterThan(0);
+console.log(item.bookingid);
+
+}
+
 })

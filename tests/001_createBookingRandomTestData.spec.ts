@@ -31,13 +31,13 @@ test("Create Booking with Random data", async({request})=>{
     "additionalneeds" : additionalneeds
   }
 
-    // json  payload
-
-  // Send the post request
+// json  payload
+// Send the post request
  const response=  await request.post(`${Base_URL}/booking`,{data:requestPayload});
- // /booking is the end point 
 
- const responseBody= await response.json(); // it will give the reponse in json format.
+ // booking is the end point 
+
+ const responseBody= await response.json(); // it will give the reSponse in json format.
 
  console.log(responseBody);
 
