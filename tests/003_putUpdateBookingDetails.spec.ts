@@ -1,4 +1,4 @@
-import{test,expect, request} from "@playwright/test";
+import{test,expect} from "@playwright/test";
 import fs from "fs";
 // create booking post
 // booking id -->> get request the booking id 
@@ -46,7 +46,7 @@ test("Create,get,Update,delete Booking details", async({request})=>{
   // step 3 - for update request we have to create the token for put, patch and delete request
   // Create token 
 
-  const tokenData= readJson("data/token_request_body.json");
+  const tokenData=     readJson("data/token_request_body.json");
    const tokenResponse = await request.post(`${Base_URL}/auth`, {data:tokenData});
 
    const tokenBody = await tokenResponse.json();

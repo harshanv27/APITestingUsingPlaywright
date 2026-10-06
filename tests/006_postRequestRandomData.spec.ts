@@ -9,7 +9,7 @@ test("Post request Random data creation", async({request})=>{
     const body= faker.food.dish();
     const userId=faker.number.int({min:1, max:10});
 
-    const requestPayLoad= {
+    const requestPayLoad = {
         
     "title": title,
     "body": body,
@@ -26,6 +26,9 @@ const postResponseBody = await postResponse.json();
   console.log(postResponseBody);
   console.log(postResponse.status());
   console.log(postResponse.statusText())
+
+  expect(postResponse.status()).toBe(201);
+  expect(postResponse.statusText()).toBe("Created");
 
   const bodyText= await postResponseBody.body;
   console.log(bodyText);

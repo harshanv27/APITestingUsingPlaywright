@@ -11,6 +11,9 @@ test("Delete request", async({request})=>{
     console.log(deleteResponse.status());
     console.log(deleteResponse.statusText());
 
+    expect(deleteResponse.status()).toBe(200);
+    expect(deleteResponse.statusText()).toBe("OK");
+
     console.log(deleteResponse);
     console.log(await deleteResponse.json());
 })

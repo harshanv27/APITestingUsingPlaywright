@@ -5,7 +5,7 @@ const Base_URL = "https://jsonplaceholder.typicode.com";
 const id=1;
 
 
-test("get request filter", async({request})=>{
+test("Get request filter", async({request})=>{
 
     const getResponse= await request.get(`${Base_URL}/posts?userid=${id}`);
 
@@ -20,6 +20,6 @@ test("get request filter", async({request})=>{
     for(const item of getResponseBody){
 
         expect(item).toHaveProperty("title");
-        //console.log("Property Exits")
+        console.log(item.title);
     }
 })

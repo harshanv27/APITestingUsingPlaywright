@@ -1,9 +1,10 @@
-// create Booking
+// Create Booking
 // Post request 
 // Request body -Json Data
 
 import{test,expect} from "@playwright/test";
 import fs from "fs";
+
 
 
 const Base_URL= "https://restful-booker.herokuapp.com";
@@ -12,10 +13,13 @@ test("Create Booking with Json data", async({request})=>{
 
     // json  payload
 
-    const jsonFile = "data/post_request_body.json";
-    const requestPayload= JSON.parse(fs.readFileSync(jsonFile, "utf-8"))  // need to read the json data 
+    const jsonFile= "data/post_request_body.json";
+    const requestPayload= JSON.parse(fs.readFileSync(jsonFile,"utf-8"));
+    
+   // need to read the json data 
 
   // Send the post request
+  
  const response=  await request.post(`${Base_URL}/booking`,{data:requestPayload});
  // /booking is the end point 
 
@@ -63,8 +67,6 @@ expect(booking.bookingdates).toMatchObject({
         "checkin" : requestPayload.bookingdates.checkin,
         "checkout" : requestPayload.bookingdates.checkout
     })
-
-   
 
     expect(booking.bookingdates).toMatchObject(requestPayload.bookingdates);
 

@@ -12,18 +12,18 @@ const requestPayLoad= JSON.parse(fs.readFileSync(filePath,"utf-8"));
 test("Put request data creation", async({request})=>{
 
 
-    const postResponse= await request.post(`${Base_URL}/posts`,{
+    const putResponse= await request.post(`${Base_URL}/posts`,{
          headers: {
     'Content-type': 'application/json; charset=UTF-8',
   },data:requestPayLoad});
 
-const postResponseBody = await postResponse.json();
+const putResponseBody = await putResponse.json();
 
-  console.log(postResponseBody);
-  console.log(postResponse.status());
-  console.log(postResponse.statusText())
+  console.log(putResponseBody);
+  console.log(putResponse.status());
+  console.log(putResponse.statusText())
 
-  const bodyText= await postResponseBody.body;
+  const bodyText= await putResponseBody.body;
   console.log(bodyText);
   expect(bodyText).toBe(requestPayLoad.body);
 
